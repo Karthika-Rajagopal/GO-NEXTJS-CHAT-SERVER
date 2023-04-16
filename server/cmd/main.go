@@ -8,7 +8,7 @@ import (
 	"e/server/router"
 )
 
-const PORT = ":1010"
+const PORT = ":8080"
 func main() {
 	
 	dbConn, err := db.NewDatabase()
@@ -27,5 +27,5 @@ func main() {
 	go hub.Run()
 
 	router.InitRouter(userHandler, wsHandler)
-	router.Start("0.0.0.0:1010")
+	router.Start("127.0.0.1:8080")
 }	
